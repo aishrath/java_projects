@@ -9,9 +9,22 @@ public interface RifkLogger {
         System.out.println("Ending method: " + getCallingMethodName());
     }
 
+    static void print_msg(String s) throws Exception {
+        if (s == null) throw new Exception("NullMessageException");
+        System.out.println("Message from: " + getCallingMethodName() + ":" + s);
+    }
+
     static String getCallingMethodName() {
+        return getStackTraceElement(3).getMethodName();
+    }
+
+    static String getParentMethodName() {
+        return getStackTraceElement(2).getMethodName();
+    }
+
+    static StackTraceElement getStackTraceElement(int methodLevel) {
         StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-        StackTraceElement stackTraceElement = stackTraceElements[3];
-        return stackTraceElement.getMethodName();
+        StackTraceElement stackTraceElement = stackTraceElements[methodLevel];
+        return stackTraceElement;
     }
 }
