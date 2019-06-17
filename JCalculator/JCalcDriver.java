@@ -1,7 +1,8 @@
 package JCalculator;
 
+import JCalculator.services.CalculatorService;
 
-import java.util.List;
+import static JCalculator.JCalcUtil.keyPrinter;
 
 /**
  * This program and its associated files
@@ -15,15 +16,14 @@ import java.util.List;
 public class JCalcDriver {
     public static void main(String[] args) {
         JCalc jCalc = new JCalc();
+        CalculatorService calculatorService = new CalculatorService();
 
-        keyPrinter(jCalc.getKeypadNumbers());
-        keyPrinter(jCalc.getKeypadOperators());
-
-    }
-
-    private static void keyPrinter(List<?> list) {
-        for (Object o : list) {
-            System.out.println(o);
+        if (JCalcConfig.DEBUG_MODE) {
+            System.out.println(jCalc.getCalculatorTitle());
+            keyPrinter(jCalc.getKeypadNumbers());
+            keyPrinter(jCalc.getKeypadOperators());
         }
+
+        System.out.println(calculatorService.add(5, 4));
     }
 }
