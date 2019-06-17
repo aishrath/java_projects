@@ -1,5 +1,3 @@
-package io.github.aishrath.loggingutils;
-
 public interface RifkLogger {
     static void log_begin_method() {
         System.out.println("Beginning method: " + getCallingMethodName());
@@ -24,7 +22,12 @@ public interface RifkLogger {
 
     static StackTraceElement getStackTraceElement(int methodLevel) {
         StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
+        for (StackTraceElement element : stackTraceElements) {
+            System.out.println(element);
+        }
         StackTraceElement stackTraceElement = stackTraceElements[methodLevel];
         return stackTraceElement;
     }
+
+
 }
