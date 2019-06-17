@@ -10,7 +10,7 @@ public class JCalcUtil {
     }
 
     public static void initializeKeyPad(List<Integer> numberList, List<Character> operatorsList) {
-        char[] operators = {'=', '+', '*', '-'};
+        char[] operators = {'=', '+', '*', '-', '/'};
 
         for (int i = 0; i < 10; i++) {
             numberList.add(i);

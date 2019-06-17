@@ -7,7 +7,8 @@ Disclaimer: Many of these may still be works in progress.
 
 Here's a list of the projects and ideas I've had so far:
 
-- JCalculator: A simple rite-of-passage Java Calcuator project showcasing some best practices like interfaces, generics, OOD, etc.
+- JCalculator: A simple rite-of-passage Java Calcuator project showcasing some best practices
+  like interfaces, generics, OOD, etc.
 - Rifklogger: A generic logging idea I had implemented as an interface for use in your classes.
 
 

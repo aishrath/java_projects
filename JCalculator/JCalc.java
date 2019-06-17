@@ -3,6 +3,7 @@ package JCalculator;
 import java.util.ArrayList;
 import java.util.List;
 
+import static JCalculator.JCalcConfig.DEFAULT_CALCULATOR_TITLE;
 import static JCalculator.JCalcUtil.initializeKeyPad;
 
 public class JCalc {
@@ -10,15 +11,12 @@ public class JCalc {
     private final List<Integer> keypadNumbers;
     private final List<Character> keypadOperators;
 
-
     JCalc() {
-        calculatorTitle = "JCalc";
+        calculatorTitle = DEFAULT_CALCULATOR_TITLE;
         keypadNumbers = new ArrayList<>();
         keypadOperators = new ArrayList<>();
         initializeKeyPad(keypadNumbers, keypadOperators);
     }
-
-
 
     public String getCalculatorTitle() {
         return calculatorTitle;
