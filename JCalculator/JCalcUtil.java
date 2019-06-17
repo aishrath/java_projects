@@ -8,4 +8,16 @@ public class JCalcUtil {
             System.out.println(o);
         }
     }
+
+    public static void initializeKeyPad(List<Integer> numberList, List<Character> operatorsList) {
+        char[] operators = {'=', '+', '*', '-'};
+
+        for (int i = 0; i < 10; i++) {
+            numberList.add(i);
+        }
+
+        for (char c : operators) {
+            operatorsList.add(c);
+        }
+    }
 }

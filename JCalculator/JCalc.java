@@ -3,6 +3,8 @@ package JCalculator;
 import java.util.ArrayList;
 import java.util.List;
 
+import static JCalculator.JCalcUtil.initializeKeyPad;
+
 public class JCalc {
     private String calculatorTitle;
     private final List<Integer> keypadNumbers;
@@ -16,17 +18,7 @@ public class JCalc {
         initializeKeyPad(keypadNumbers, keypadOperators);
     }
 
-    private static void initializeKeyPad(List<Integer> numberList, List<Character> operatorsList) {
-        char[] operators = {'=', '+', '*', '-'};
 
-        for (int i = 0; i < 10; i++) {
-            numberList.add(i);
-        }
-
-        for (char c : operators) {
-            operatorsList.add(c);
-        }
-    }
 
     public String getCalculatorTitle() {
         return calculatorTitle;
