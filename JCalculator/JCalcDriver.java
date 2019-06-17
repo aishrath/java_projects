@@ -1,6 +1,8 @@
 package JCalculator;
 
 
+import java.util.List;
+
 /**
  * This program and its associated files
  * is an implementation of a simple
@@ -12,13 +14,16 @@ package JCalculator;
  */
 public class JCalcDriver {
     public static void main(String[] args) {
-        JCalc jCalc =  new JCalc();
-        for (int key : jCalc.getKeypadNumbers()) {
-            System.out.println(key);
-        }
+        JCalc jCalc = new JCalc();
 
-        for (char key : jCalc.getKeypadOperators()) {
-            System.out.println(key);
+        keyPrinter(jCalc.getKeypadNumbers());
+        keyPrinter(jCalc.getKeypadOperators());
+
+    }
+
+    private static void keyPrinter(List<?> list) {
+        for (Object o : list) {
+            System.out.println(o);
         }
     }
 }
