@@ -53,15 +53,15 @@ public class JCalc {
 
     private void generateNumbersOnKeyPad() {
         int start_pos_x = 5;
-        int start_pos_y = 90;
+        int start_pos_y = 100;
         reverse(keypadNumbers);
 
         for (int i = 0; i < 3; i++) {
             Object key = keypadNumbers.get(i);
             JButton b = new JButton(key.toString());
-            start_pos_x += 50;
-            b.setBounds(start_pos_x, start_pos_y, 55, 40);
+            b.setBounds(start_pos_x, start_pos_y, 75, 75);
             JCalcFrame.add(b);
+            start_pos_x += 75;
         }
 
         start_pos_x = 5;
@@ -69,7 +69,7 @@ public class JCalc {
         for (int i = 3; i < 6; i++) {
             Object key = keypadNumbers.get(i);
             JButton b = new JButton(key.toString());
-            start_pos_x += 50;
+            start_pos_x += 75;
             b.setBounds(start_pos_x, start_pos_y, 55, 40);
             JCalcFrame.add(b);
         }
@@ -79,7 +79,7 @@ public class JCalc {
         for (int i = 6; i < 9; i++) {
             Object key = keypadNumbers.get(i);
             JButton b = new JButton(key.toString());
-            start_pos_x += 50;
+            start_pos_x += 75;
             b.setBounds(start_pos_x, start_pos_y, 55, 40);
             JCalcFrame.add(b);
         }
