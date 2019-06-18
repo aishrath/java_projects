@@ -1,11 +1,11 @@
 package JCalculator.interfaces;
 
-public interface CalculatorOperationsInterface {
-    Integer add(int a, int b);
+public interface CalculatorOperationsInterface<T> {
+    T add(T a, T b);
 
-    Integer subtract(int a, int b);
+    T subtract(T a, T b);
 
-    Integer multiply(int a, int b);
+    T multiply(T a, T b);
 
-    Integer divide(int a, int b) throws Exception;
+    T divide(T a, T b) throws Exception;
 }

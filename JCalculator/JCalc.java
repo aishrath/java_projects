@@ -56,7 +56,35 @@ public class JCalc {
         int start_pos_y = 90;
         reverse(keypadNumbers);
 
-        for (Object key : keypadNumbers) {
+        for (int i = 0; i < 3; i++) {
+            Object key = keypadNumbers.get(i);
+            JButton b = new JButton(key.toString());
+            start_pos_x += 50;
+            b.setBounds(start_pos_x, start_pos_y, 55, 40);
+            JCalcFrame.add(b);
+        }
+
+        start_pos_x = 5;
+        start_pos_y = 150;
+        for (int i = 3; i < 6; i++) {
+            Object key = keypadNumbers.get(i);
+            JButton b = new JButton(key.toString());
+            start_pos_x += 50;
+            b.setBounds(start_pos_x, start_pos_y, 55, 40);
+            JCalcFrame.add(b);
+        }
+
+        start_pos_x = 5;
+        start_pos_y = 250;
+        for (int i = 6; i < 9; i++) {
+            Object key = keypadNumbers.get(i);
+            JButton b = new JButton(key.toString());
+            start_pos_x += 50;
+            b.setBounds(start_pos_x, start_pos_y, 55, 40);
+            JCalcFrame.add(b);
+        }
+
+        /*for (Object key : keypadNumbers) {
             if (JCalcConfig.DEBUG_MODE)
                 System.out.println("Adding Operator Key...: " + key.toString());
 
@@ -69,7 +97,7 @@ public class JCalc {
 
             b.setBounds(start_pos_x, start_pos_y, 100, 40);
             JCalcFrame.add(b);
-        }
+        }*/
     }
 
     public String getCalculatorTitle() {
