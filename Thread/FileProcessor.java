@@ -1,11 +1,17 @@
+package RestCaller;
+
 import java.util.ArrayList;
 import java.util.Random;
+
+import kong.unirest.HttpResponse;
+import kong.unirest.Unirest;
 
 /*
  * This program illustrates the use of threads
  * to print out and process a (large) file.
  * 
- * @author Aishwareeya Rath
+ * Uses the Kong Unirest Library: https://github.com/Kong/unirest-java
+ * to make a HTTP POST call to http://httpbin.org
  */
 
 public class FileProcessor {
@@ -17,7 +23,6 @@ public class FileProcessor {
 		for (ArrayList<String> chunk : chunksArrayList) {
 			processChunk(chunk);
 		}
-
 	}
 
 	private static void processChunk(ArrayList<String> chunk) {
@@ -28,9 +33,27 @@ public class FileProcessor {
 			@Override
 			public void run() {
 				for (String string : chunk) {
-					System.out.println(string);
+					processString(string);
 				}
 			}
+
+			private void processString(String string) {
+				try {
+					sendPost(string);
+				} catch (Exception e) {
+					System.err.println(e.getStackTrace());
+				}
+			}
+
+			private void sendPost(String string) throws Exception {
+
+				HttpResponse<String> response = Unirest.post("http://httpbin.org/post")
+						.header("accept", "application/json").queryString("item", string).asString();
+
+				System.out.println(
+						"Response Status Code: " + response.getStatus() + " Response Body: " + response.getBody());
+			}
+
 		}
 
 		Thread t = new Thread(new ThreadExecutor());
